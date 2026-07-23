@@ -9,9 +9,11 @@
 }
 
 :root {
+  --black: #000000;
   --background: #080b08;
   --foreground: #ffffff;
   --accent: #c8ff50;
+  --hover:#8ebb2e;
   --sec: #979595;
 }
 @theme {
@@ -45,4 +47,42 @@ p {
 .Screen {
   width: 90%;
   margin: 0 auto;
+  min-height: 100svh;
+}
+
+@utility faded-box {
+  @apply border border-accent/20 bg-accent/5;
+}
+@utility bg-grid-white {
+  background-size: 60px 60px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+input {
+  display: flex;
+  flex: 4;
+  background-color: var(--background);
+  border: 1px solid var(--sec);
+  border-radius: 0.4rem;
+  padding: 0.8rem 1rem;
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--black);
+  font-weight: 700;
+  padding: 0.8rem 1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease 100ms;
+}
+button:hover{
+  transform: translateY(-1);
+  background-color: var(--hover);
 }
